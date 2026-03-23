@@ -28,4 +28,4 @@ jobs:
         run: date
       
       - name: show ip
-      run: ip a s
+        run: ip a s
