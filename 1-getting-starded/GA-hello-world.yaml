@@ -1,0 +1,28 @@
+# 1. Name of the workflow
+name: My First Workflow
+
+# 2. Events: What triggers this?
+on:
+  push:
+    branches: [ "main" ]  # Runs when you push to main
+  pull_request:
+    branches: [ "main" ]  # Runs when a PR is opened against main
+
+# 3. Hierarchy: Jobs -> Steps -> Actions/Commands
+jobs:
+  build-and-greet:
+    # Specify the runner (the virtual computer)
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step A: Check out your code so the workflow can "see" it
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step B: Run a standard terminal command
+      - name: Say hello
+        run: echo "The workflow is running successfully!"
+
+      # Step C: Check the current date
+      - name: Show date
+        run: date
