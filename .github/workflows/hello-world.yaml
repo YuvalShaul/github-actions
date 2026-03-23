@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step A: Check out your code so the workflow can "see" it
+      # Step A: Check out your code into the runner, so the workflow can "see" it
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -26,3 +26,6 @@ jobs:
       # Step C: Check the current date
       - name: Show date
         run: date
+      
+      - name: show ip
+      run: ip a s
